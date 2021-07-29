@@ -1,0 +1,38 @@
+import random
+l=["snake","water","gun"]
+player=0
+computer=0
+triesleft=int(input("Enter the number of time you want to play:"))
+while (triesleft>=1):
+  a=random.choice(l)
+  print("Enter snake,water or gun:",end="")
+  b=str(input())
+  if b==a:
+    print("Computer choose:",a)
+    print("It is a draw")
+  elif b=="snake" and a=="water":
+    print("Computer choose:",a)
+    print("You win")
+    player +=1
+  elif b=="snake" and a=="gun":
+    print("Computer choose:",a)
+    print("You lose")
+    computer +=1
+  elif b=="gun" and a=="snake":
+    print("Computer choose:",a)
+    print("You win")
+    player +=1
+  elif b=="gun" and a=="water":
+    print("Computer choose:",a)
+    print("You lose")
+    computer +=1
+  elif b=="water" and a=="gun":
+    print("Computer choose:",a)
+    print("You win")
+    player +=1
+  elif b=="water" and a=="snake":
+    print("Computer choose:",a)
+    print("You lose")
+    computer +=1
+  triesleft -=1
+print("Yourscore:",player,"Computer's score:",computer) 
